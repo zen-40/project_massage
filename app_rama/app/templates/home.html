@@ -1,0 +1,523 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="pl">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="">
+        <meta name="author" content="">
+        <title>Kashima - wschodni masaż</title>
+        <!-- Favicons-->
+        <link rel="shortcut icon" href="{% static 'assets/images/favicon.png' %}">
+        <link rel="apple-touch-icon" href="{% static 'assets/images/apple-touch-icon.png' %}">
+        <link rel="apple-touch-icon" sizes="72x72" href="{% static 'assets/images/apple-touch-icon-72x72.png' %}">
+        <link rel="apple-touch-icon" sizes="114x114" href="{% static 'assets/images/apple-touch-icon-114x114.png' %}">
+        <!-- Web Fonts-->
+        <link href="https://fonts.googleapis.com/css?family=Poppins:400,500,600%7cPlayfair+Display:400i" rel="stylesheet">
+        <link href="https://use.fontawesome.com/releases/v5.0.6/css/all.css" rel="stylesheet">
+        <!-- Plugins-->
+        <link href="{% static 'assets/css/plugins.min.css' %}" rel="stylesheet">
+        <!-- Template core CSS-->
+        <link href="{% static 'assets/css/template.css' %}" rel="stylesheet">
+    </head>
+    <body>
+
+        <!-- Preloader-->
+        <div class="page-loader">
+            <div class="page-loader-inner">
+                <div class="spinner">
+                    <div class="double-bounce1"></div>
+                    <div class="double-bounce2"></div>
+                </div>
+            </div>
+        </div>
+        <!-- Preloader end-->
+
+        <!-- Header-->
+        <header class="header header-transparent">
+            <div class="container-fluid">
+                <!-- Brand-->
+                <div class="inner-header"><a class="inner-brand" href="{% url 'app:home' %}">Kashima</a></div>
+                <!-- Navigation-->
+                <div class="inner-navigation collapse">
+                    <div class="inner-nav onepage-nav">
+                        <ul>
+                            <li><a href="#home"><span class="menu-item-span">Strona główna</span></a></li>
+                            <li><a href="#about"><span class="menu-item-span">O nas</span></a></li>
+                            <li><a href="#people"><span class="menu-item-span">Zespół</span></a></li>
+                            <li><a href="#massage"><span class="menu-item-span">Masaże</span></a></li>
+                            <li><a href="#opinion"><span class="menu-item-span">Opinie klientów</span></a></li>
+                            <li><a href="#contact"><span class="menu-item-span">Kontakt</span></a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="extra-nav">
+                    <ul>
+                        <li><a class="off-canvas-open" href="#"><span class="menu-item-span"><i class="ti-menu"></i></span></a></li>
+                        <li class="nav-toggle"><a href="#" data-toggle="collapse" data-target=".inner-navigation"><span class="menu-item-span"><i class="ti-menu"></i></span></a></li>
+                    </ul>
+                </div>
+            </div>
+        </header>
+        <!-- Header end-->
+
+        <!-- Wrapper-->
+        <div class="wrapper">
+			<!-- Hero-->
+			<section class="module-cover parallax fullscreen text-center" id="home" data-background="{% static 'assets/video/video_massage.png' %}" data-jarallax-video="webm:{% static 'assets/video/video_massage.webm' %},ogv:{% static 'assets/video/video_massage.ogv' %},mp4:{% static 'assets/video/video_massage.mp4' %}" data-overlay="0.45">
+				<div class="container">
+					<div class="row">
+						<div class="col-md-12">
+							<h1 class="m-b-20"><strong>Szukasz najlepszego <br> masażysty?</strong></h1>
+							<p class="m-b-40">Skorzystaj z jedynego w swoim rodzaju studia masażu wschodniego Kashima.  <br> Zrelaksuj się, odpręż i wypełnij swoje ciało nową energią.</p>
+							<a class="btn btn-lg btn-circle btn-outline-new-white" href="#" data-toggle="modal" data-target="#modal-2">Umów się na spotkanie</a></p>
+						</div>
+					</div>
+				</div>
+			</section>
+			<!-- Hero end-->
+
+            <!-- About-->
+            <section class="module divider-bottom" id="about">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-6 m-auto text-center">
+                            <h1>Kashima - Twoje studio masażu wschodniego</h1>
+                            <p class="lead">Jesteśmy miejscem w Warszawie, w którym zaznasz uczucia relaksu i odprężenia jednocześnie wypełniając swoje ciało nową energii. Wszytko, dzięki najlepszym wschodnim masażystą z wieloletnim doświadczeniem, którzy sprawią, że poczujesz się naprawdę wyjątkowo.</p>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="space" data-MY="60px"></div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="space" data-mY="30px"></div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-3 col-md-6">
+                            <div class="icon-box text-center">
+                                <div class="icon-box-icon"><span><i class="far fa-star"></i></span></div>
+                                <div class="icon-box-title">
+                                    <h6>Najwyższa jakość</h6>
+                                </div>
+                                <div class="icon-box-content">
+                                    <p>Aż 96% klientów deklaruje, że poleciłoby nas znajomym i odwiedzi nas ponownie.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-md-6">
+                            <div class="icon-box text-center">
+                                <div class="icon-box-icon"><span><i class="far fa-calendar-alt"></i></span></div>
+                                <div class="icon-box-title">
+                                    <h6>Wieloletnie doświadczenie</h6>
+                                </div>
+                                <div class="icon-box-content">
+                                    <p>Każdy z naszych masażystów ma wieloletnie doświadczenie zdobyte w najlepszych salonach masażu i SPA.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-md-6">
+                            <div class="icon-box text-center">
+                                <div class="icon-box-icon"><span><i class="fas fa-map-marker-alt"></i></span></div>
+                                <div class="icon-box-title">
+                                    <h6>Świetna lokalizacja</h6>
+                                </div>
+                                <div class="icon-box-content">
+                                    <p>Nasza lokalizacja jest parę minut samochodem od centrum Warszawy, co zapewnia łatwy i szybki dojazd.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-md-6">
+                            <div class="icon-box text-center">
+                                <div class="icon-box-icon"><span><i class="far fa-smile"></i></span></div>
+                                <div class="icon-box-title">
+                                    <h6>Niezapomniane wrażenia</h6>
+                                </div>
+                                <div class="icon-box-content">
+                                    <p>Dokładamy wszelkich starań, aby każde spotkanie było dla naszego klienta naprawdę wyjątkowe.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- About end-->
+
+            <!-- Portfolio-->
+            <section class="module bg-gray p-b-0" id="people">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-6 m-auto text-center">
+                            <h1>Nasz zespół</h1>
+                            <p class="lead">Poznaj najlepszych masażystów w Warszawie z prawdziwą pasją do tego, co robią.</p>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="space" data-MY="40px"></div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <ul class="filters serif">
+                                <li><a class="current" href="#" data-filter="*">Nasz zespół:</a></li>
+								{% for masseur in query_masseur %}
+                                <li><a href="{% url 'app:masseur_detail' masseur.id %}" data-filter=".{{ masseur.id }}">{{ masseur.name }} {{ masseur.surname }}</a></li>
+								{% endfor %}
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="container-fluid">
+                    <div class="row row-portfolio" data-columns="3">
+                        <div class="grid-sizer"></div>
+						{% for masseur in query_masseur %}
+                        <div class="portfolio-item {{ masseur.id }}">
+                            <div class="portfolio-item-wrapper">
+								<div class="portfolio-item-img"><img src="{{ masseur.basic_photo.url }}" alt=""></div>
+                                <div class="portfolio-item-caption">
+                                    <h6 class="portfolio-item-title">{{ masseur.name }} {{ masseur.surname }}</h6><span class="portfolio-item-subtitle serif">
+									{{ masseur.description|truncatechars:100 }}</span>
+                                </div><a class="portfolio-item-link" href="{% url 'app:masseur_detail' masseur.id %}"></a>
+                            </div>
+                        </div>
+						{% endfor %}
+                    </div>
+                </div>
+            </section>
+            <!-- Portfolio end-->
+
+            <!-- Counters-->
+            <section class="module bg-gray p-b-0">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-4">
+                            <div class="counter">
+                                <div class="counter-icon"><span><i class="fas fa-users"></i></span></div>
+                                <div class="counter-number">
+                                    <h6><strong class="counter-timer" data-from="0" data-to="3">0</strong></h6>
+                                </div>
+                                <div class="counter-title">Świetnych masażystów</div>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="counter">
+                                <div class="counter-icon"><span><i class="far fa-calendar-check"></i></span></div>
+                                <div class="counter-number">
+                                    <h6><strong class="counter-timer" data-from="0" data-to="12">0</strong></h6>
+                                </div>
+                                <div class="counter-title">Łącznie lat doświadczenia</div>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="counter">
+                                <div class="counter-icon"><span><i class="fas fa-smile"></i></span></div>
+                                <div class="counter-number">
+                                    <h6><strong class="counter-timer" data-from="0" data-to="100">0</strong>%</h6>
+                                </div>
+                                <div class="counter-title">Skupienia na Twoim zadowoleniu</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- Counters end-->
+			
+            <!-- Team-->
+            <section class="module" id="massage">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-6 m-auto text-center">
+                            <h1>Poznaj nasze masaże:</h1>
+                            <p class="lead">Wybierz masaż który wydaje Ci się interesujący, a nasi masażyści zadbają o całą resztę.</p>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="space" data-MY="60px"></div>
+                        </div>
+                    </div>
+                    <div class="row">
+						{% for product in massage_products %}
+                        <div class="col-lg-4 col-md-6">
+                            <div class="team-item">
+                                <div class="team-image"><img src="{{ product.image.url }}" alt="{{ product.name }}-img">
+                                    <div class="team-wrap">
+                                        <div class="team-content">
+                                            <h6 class="team-name">{{ product.name }}</h6>
+                                            <div class="team-role">
+											{{ product.description }}
+											</div>
+											<div class="mt-4">
+												<button class="btn btn-sm btn-block btn-circle btn-outline-new-white" data-toggle="modal" data-target="#modal-2">Umów spotkanie online</button>
+											</div>
+                                        </div>
+                                        <div class="team-content-social">
+                                            <ul>
+                                                <li><a href="#" data-toggle="modal" data-target="#modal-2"><i class="fas fa-plus"></i></a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+						{% endfor %}
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="space" data-MY="30px"></div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <p class="text-center"><a class="btn btn-circle btn-outline-brand" href="#" data-toggle="modal" data-target="#modal-2">Umów się już teraz online</a></p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- Team end-->
+
+            <!-- Testimonials-->
+            <section class="module parallax" data-background="{% static 'assets/images/massage_1.jpg' %}" data-overlay="0.5" id="opinion">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="space" data-MY="50px"></div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="review-slides owl-carousel">
+                                <div class="review">
+                                    <div class="review-icons"><img src="{% static 'assets/images/avatar/user-8.jpg' %}" alt="">
+                                    </div>
+                                    <div class="review-content">
+                                        <blockquote>
+                                            <p>Najlepsze miejsce na relaks. Przemiła obsługa i piękne wnętrze. Serdecznie i z czystym <br/>  sumieniem każdemu polecam studio masażu wschodniego Kashima.</p>
+                                            <footer class="blockquote-footer">Krzysztof Przysiecki</footer>
+                                        </blockquote>
+                                    </div>
+                                </div>
+                                <div class="review">
+                                    <div class="review-icons"><img src="{% static 'assets/images/avatar/user-1.jpg' %}" alt="">
+                                    </div>
+                                    <div class="review-content">
+                                        <blockquote>
+                                            <p>Otrzymałam masaż relaksacyjny w Kashima na moje urodziny. Powiem Wam odpłynąłem :) <br/> rewelacyjne miejsce ze świetną atmosferą!</p>
+                                            <footer class="blockquote-footer">Katarzyna Latasiewicz</footer>
+                                        </blockquote>
+                                    </div>
+                                </div>
+                                <div class="review">
+                                    <div class="review-icons"><img src="{% static 'assets/images/avatar/user-7.jpg' %}" alt="">
+                                    </div>
+                                    <div class="review-content">
+                                        <blockquote>
+                                            <p>Masaż Super, te panie naprawdę dokładnie wiedzą co robią. Wystrój fajny, faktycznie człowiek <br> zaczyna się odprężać i nabierać nowej energii do działania.</p>
+                                            <footer class="blockquote-footer">Dawid Lasek</footer>
+                                        </blockquote>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="space" data-MY="50px"></div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- Testimonials end-->
+
+            <!-- Clients-->
+            <section class="module bg-gray p-t-0 p-b-40" id="time_work">
+                <div class="container">
+                    <div class="space" data-MY="-60px"></div>
+                    <div class="row">
+                        <div class="col-md-6 pricing-wrapper">
+                            <div class="pricing-header">
+                                <div class="pricing-icon"><i class="fas fa-calendar-alt"></i></div>
+                                <div class="pricing-title">Jak pracujemy w tygodniu?</div>
+                            </div>
+                            <h4>Poniedziałek - Piątek
+                            </h4>
+                            <div class="pricing-body">
+                                <h3>8.00 - 22.00</h3>
+                            </div>
+                            <div class="pricing-footer"><a class="btn btn-circle btn-brand" href="#" data-toggle="modal" data-target="#modal-2">Umów się online</a></div>
+                        </div>
+                        <div class="col-md-6 pricing-wrapper pricing-popular">
+                            <div class="pricing-header">
+                                <div class="pricing-icon"><i class="far fa-calendar-alt"></i></div>
+                                <div class="pricing-title">Jak pracujemy w weekendy?</div>
+                            </div>
+                            <h4>Sobota - Niedziela
+                            </h4>
+                            <div class="pricing-body">
+                                <h3>10.00 - 16.00</h3>
+                            </div>
+                            <div class="pricing-footer"><a class="btn btn-circle btn-outline-brand" href="#" data-toggle="modal" data-target="#modal-2">Umów się online</a></div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- Clients end-->
+			
+			<!-- Google maps -->
+
+            <section class="module" id="contact">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-6 m-auto text-center">
+                            <h1>Lokalizacja i kontakt:</h1>
+                            <p class="lead">01-267, Warszawa, Jana Kazimierza 47/75</p>
+							<p class="lead">Telefon: (+48) 511-637-075</p>
+							<p class="lead">E-mail: biuro@kashima.pl</p>
+							<a class="btn btn-circle btn-outline-primary btn-sm" target="_blank" rel="noopener noreferrer" href="https://www.google.pl/maps/place/Jana+Kazimierza+47,+01-267+Warszawa/data=!4m2!3m1!1s0x471ecb4706b4b433:0x4c45178d3da990a4?ved=2ahUKEwimxqT_pfPgAhVMlYsKHTGGA1QQ8gEwAHoECAAQAQ"><span><i class="fas fa-map-marker-alt"></i> </span>Otwórz google maps</a>
+                        </div>
+                    </div>
+				<div>
+			</section>
+			
+			
+			<section class="maps-container">
+				<div class="map" data-addresses="[52.2215116, 20.9355296]" data-info="[Warszawa, ul. Jana Kazimierza 47/75]" data-icon="{% static 'assets/images/map-icon.png' %}" data-zoom="13"></div>
+			</section>
+
+			<!-- google maps end-->
+
+            <!-- Footer-->
+            <footer class="footer">
+                <div class="footer-widgets">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-md-3">
+                                <!-- Text widget-->
+                                <aside class="widget widget-text">
+                                    <div class="widget-title">
+                                        <h6>O nas</h6>
+                                    </div>
+                                    <div class="textwidget">
+                                        <p>Kashima to studio masażu wschodniego zlokalizowane parę minut od w centrum Warszawy. Dbamy o najlepszy masaż dla każdego naszego klienta.</p>
+                                        <p>
+                                            Lokalizacja: Warszawa 01-267, ul. Jana Kazimierza 47/75<br>
+                                            E-mail: biuro@kashima.pl<br>
+                                            Phone: (+48) 511-637-075<br>
+                                        </p>
+                                        <ul class="social-icons">
+                                            <li><a href="#"><i class="fab fa-google"></i></a></li>
+                                            <li><a href="#"><i class="fab fa-instagram"></i></a></li>
+                                            <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
+                                        </ul>
+                                    </div>
+                                </aside>
+                            </div>
+                            <div class="col-md-6">
+                                <!-- Recent entries widget-->
+                                <aside class="widget widget-recent-entries">
+                                    <div class="widget-title">
+                                        <h6>Tematy na naszym blogu:</h6>
+                                    </div>
+                                    <ul>
+										{% for titile in query_post_title %}
+                                        <li><a href="{% url 'app:post_detail' titile.id %}">{{ titile.title }}</a><span class="post-date">{{ title.added_at }}</span></li>
+										{% endfor %}
+                                    </ul>
+                                </aside>
+                            </div>
+                            <div class="col-md-3">
+                                <!-- Recent works-->
+                                <aside class="widget widget-recent-works">
+                                    <div class="widget-title">
+                                        <h6>Nasi masażyści</h6>
+                                    </div>
+                                    <ul>
+										{% for masseur in query_masseur %}
+										<li><a href="{% url 'app:masseur_detail' masseur.id %}"><img src="{{ masseur.basic_photo.url }}" alt=""></a></li>
+										{% endfor %}
+                                    </ul>
+                                </aside>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="footer-bar">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="copyright">
+                                    <p>© 2019 Kashima, Studio Masażu Wschodniego. Wszystkie prawa zastrzeżone.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </footer>
+            <!-- Footer end-->
+        </div>
+        <!-- Wrapper end-->
+        <!-- Off canvas-->
+        <div class="off-canvas-sidebar">
+            <div class="off-canvas-sidebar-wrapper">
+                <div class="off-canvas-header"><a class="off-canvas-close" href="#"><span class="ti-close"></span></a></div>
+                <div class="off-canvas-content">
+                    <!-- Text widget-->
+                    <aside class="widget widget-text">
+                        <div class="textwidget">
+                            <p class="text-center"><img src="{% static 'assets/images/logo-light-2.png' %}" alt="" width="80px"></p>
+                            <p class="text-center">Poznaj najlepszych masażystów w Warszawie</p>
+                        </div>
+                    </aside>
+                    <!-- Recent portfolio widget-->
+                    <aside class="widget widget-recent-works">
+                        <ul>
+							{% for masseur in query_masseur %}
+                            <li><a href="{% url 'app:masseur_detail' masseur.id %}"><img src="{{ masseur.basic_photo.url }}" alt=""></a></li>
+							{% endfor %}
+                        </ul>
+                    </aside>
+                    <!-- Social Icons-->
+                    <ul class="social-icons text-center">
+                        <li><a href="#"><i class="fab fa-google fa-2x"></i></a></li>
+                        <li><a href="#"><i class="fab fa-instagram fa-2x"></i></a></li>
+                        <li><a href="#"><i class="fab fa-facebook-f fa-2x"></i></a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <!-- Off canvas end-->
+		
+		<!-- Modal ordering Large -->
+		<div class="modal fade" id="modal-2" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+		   <div class="modal-dialog modal-lg" role="document">
+			   <div class="modal-content">
+				   <div class="modal-header">
+					   <h5 class="modal-title">Rezerwacja online</h5>
+					   <button class="close" type="button" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+				   </div>
+				   <div class="modal-body">
+					  <iframe src="https://kasgima.nakiedy.pl/em/?h=530" id="nakiedyWidget" style="width: 1000px; height: 800px; border:0;max-width:100%;"></iframe>
+				   </div>
+				   <div class="modal-footer">
+					   <button class="btn btn-secondary" type="button" data-dismiss="modal">Zamknij</button>
+				   </div>
+			   </div>
+		   </div>
+		</div>
+		<!-- modal end -->
+
+        <!-- To top button--><a class="scroll-top" href="#top"><i class="fas fa-angle-up"></i></a>
+
+        <!-- Scripts-->
+        <script src="{% static 'assets/js/custom/jquery.min.js' %}"></script>
+        <script src="{% static 'assets/js/custom/popper.min.js' %}"></script>
+        <script src="{% static 'assets/js/bootstrap/bootstrap.min.js' %}"></script>
+        <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDcJ3BP0AIuqBRDgEeQVqiysp2PTNHquuo"></script>
+        <script src="{% static 'assets/js/custom/plugins.min.js' %}"></script>
+        <script src="{% static 'assets/js/custom/custom.min.js' %}"></script>
+    </body>
+</html>

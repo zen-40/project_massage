@@ -1,0 +1,243 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="pl">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="">
+        <meta name="author" content="">
+        <title>Kashima - wschodni masaż</title>
+        <!-- Favicons-->
+        <link rel="shortcut icon" href="{% static 'assets/images/favicon.png' %}">
+        <link rel="apple-touch-icon" href="{% static 'assets/images/apple-touch-icon.png' %}">
+        <link rel="apple-touch-icon" sizes="72x72" href="{% static 'assets/images/apple-touch-icon-72x72.png' %}">
+        <link rel="apple-touch-icon" sizes="114x114" href="{% static 'assets/images/apple-touch-icon-114x114.png' %}">
+        <!-- Web Fonts-->
+        <link href="https://fonts.googleapis.com/css?family=Poppins:400,500,600%7cPlayfair+Display:400i" rel="stylesheet">
+        <link href="https://use.fontawesome.com/releases/v5.0.6/css/all.css" rel="stylesheet">
+        <!-- Plugins-->
+        <link href="{% static 'assets/css/plugins.min.css' %}" rel="stylesheet">
+        <!-- Template core CSS-->
+        <link href="{% static 'assets/css/template.css' %}" rel="stylesheet">
+    </head>
+    <body>
+
+        <!-- Preloader-->
+        <div class="page-loader">
+            <div class="page-loader-inner">
+                <div class="spinner">
+                    <div class="double-bounce1"></div>
+                    <div class="double-bounce2"></div>
+                </div>
+            </div>
+        </div>
+        <!-- Preloader end-->
+
+        <!-- Preloader-->
+        <div class="page-loader">
+            <div class="page-loader-inner">
+                <div class="spinner">
+                    <div class="double-bounce1"></div>
+                    <div class="double-bounce2"></div>
+                </div>
+            </div>
+        </div>
+        <!-- Preloader end-->
+
+        <!-- Header-->
+        <header class="header header-transparent">
+            <div class="container-fluid">
+                <!-- Brand-->
+                <div class="inner-header"><a class="inner-brand" href="{% url 'app:home' %}">Kashima</a></div>
+                <!-- Navigation-->
+                <div class="inner-navigation collapse">
+                    <div class="inner-nav onepage-nav">
+                        <ul>
+                            <li><a href="{% url 'app:home' %}"><span class="menu-item-span">Wróć na stronę główną</span></a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="extra-nav">
+                    <ul>
+                        <li><a class="off-canvas-open" href="#"><span class="menu-item-span"><i class="ti-menu"></i></span></a></li>
+                        <li class="nav-toggle"><a href="#" data-toggle="collapse" data-target=".inner-navigation"><span class="menu-item-span"><i class="ti-menu"></i></span></a></li>
+                    </ul>
+                </div>
+            </div>
+        </header>
+        <!-- Header end-->
+
+        <!-- Wrapper-->
+        <div class="wrapper">
+            <!-- Hero-->
+            <section class="module-cover parallax text-center" data-background="{% static 'assets/images/blog_massage_back_img.jpg' %}" data-overlay="0.3">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <h2>Nasz blog</h2>
+                            <p>Poznaj najnowsze tematy na naszym blogu.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- Hero end-->
+
+            <!-- Blog-->
+            <section class="module">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-8 m-auto">
+							
+							{% for post in query_post %}
+                            <!-- Post-->
+                            <article class="post">
+                                <div class="post-preview"><a href="{% url 'app:post_detail' post.id %}"><img src="{{ post.img.url }}" alt=""></a></div>
+                                <div class="post-wrapper">
+                                    <div class="post-header">
+                                        <h2 class="post-title"><a href="{% url 'app:post_detail' post.id %}">{{ post.title }}</a></h2>
+                                        <ul class="post-meta">
+                                            <li>{{ post.added_at }}</li>
+                                        </ul>
+                                    </div>
+                                    <div class="post-content">
+                                        <p>{{ post.description|truncatechars:410 }}</p>
+                                    </div>
+                                    <div class="post-more"><a href="{% url 'app:post_detail' post.id %}">Czytaj więcej</a></div>
+                                </div>
+                            </article>
+                            <!-- Post end-->
+							{% endfor %}
+
+                            <!-- Page Navigation-->
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <nav>
+                                        <ul class="pagination justify-content-center">
+                                            <li class="page-item"><a class="page-link" href="#"><span class="fas fa-angle-left"></span></a></li>
+                                            <li class="page-item active"><a class="page-link" href="#">1</a></li>
+                                            <li class="page-item"><a class="page-link" href="#">2</a></li>
+                                            <li class="page-item"><a class="page-link" href="#">3</a></li>
+                                            <li class="page-item"><a class="page-link" href="#">4</a></li>
+                                            <li class="page-item"><a class="page-link" href="#"><span class="fas fa-angle-right"></span></a></li>
+                                        </ul>
+                                    </nav>
+                                </div>
+                            </div>
+                            <!-- Page Navigation end-->
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- Blog end-->
+
+            <!-- Footer-->
+            <footer class="footer">
+                <div class="footer-widgets">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-md-3">
+                                <!-- Text widget-->
+                                <aside class="widget widget-text">
+                                    <div class="widget-title">
+                                        <h6>O nas</h6>
+                                    </div>
+                                    <div class="textwidget">
+                                        <p>Kashima to studio masażu wschodniego zlokalizowane parę minut od w centrum Warszawy. Dbamy o najlepszy masaż dla każdego naszego klienta.</p>
+                                        <p>
+                                            Lokalizacja: Warszawa 01-267, ul. Jana Kazimierza 47/75<br>
+                                            E-mail: biuro@kashima.pl<br>
+                                            Phone: (+48) 511-637-075<br>
+                                        </p>
+                                        <ul class="social-icons">
+                                            <li><a href="#"><i class="fab fa-google"></i></a></li>
+                                            <li><a href="#"><i class="fab fa-instagram"></i></a></li>
+                                            <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
+                                        </ul>
+                                    </div>
+                                </aside>
+                            </div>
+                            <div class="col-md-6">
+                                <!-- Recent entries widget-->
+                                <aside class="widget widget-recent-entries">
+                                    <div class="widget-title">
+                                        <h6>Tematy na naszym blogu:</h6>
+                                    </div>
+                                    <ul>
+										{% for titile in query_post_title %}
+                                        <li><a href="{% url 'app:post_detail' titile.id %}">{{ titile.title }}</a><span class="post-date">{{ title.added_at }}</span></li>
+										{% endfor %}
+									</ul>
+                                </aside>
+                            </div>
+                            <div class="col-md-3">
+                                <!-- Recent works-->
+                                <aside class="widget widget-recent-works">
+                                    <div class="widget-title">
+                                        <h6>Nasi masażyści</h6>
+                                    </div>
+                                    <ul>
+										{% for masseur in query_masseur %}
+										<li><a href="{% url 'app:masseur_detail' masseur.id %}"><img src="{{ masseur.basic_photo.url }}" alt=""></a></li>
+										{% endfor %}
+                                    </ul>
+                                </aside>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="footer-bar">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="copyright">
+                                    <p>© 2019 Kashima, Studio Masażu Wschodniego. Wszystkie prawa zastrzeżone.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </footer>
+            <!-- Footer end-->
+        </div>
+        <!-- Wrapper end-->
+        <!-- Off canvas-->
+        <div class="off-canvas-sidebar">
+            <div class="off-canvas-sidebar-wrapper">
+                <div class="off-canvas-header"><a class="off-canvas-close" href="#"><span class="ti-close"></span></a></div>
+                <div class="off-canvas-content">
+                    <!-- Text widget-->
+                    <aside class="widget widget-text">
+                        <div class="textwidget">
+                            <p class="text-center"><img src="{% static 'assets/images/logo-light-2.png' %}" alt="" width="80px"></p>
+                            <p class="text-center">Poznaj najlepszych masażystów w Warszawie</p>
+                        </div>
+                    </aside>
+                    <!-- Recent portfolio widget-->
+                    <aside class="widget widget-recent-works">
+                        <ul>
+							{% for masseur in query_masseur %}
+                            <li><a href="{% url 'app:masseur_detail' masseur.id %}"><img src="{{ masseur.basic_photo.url }}" alt=""></a></li>
+							{% endfor %}
+                        </ul>
+                    </aside>
+                    <!-- Social Icons-->
+                    <ul class="social-icons text-center">
+                        <li><a href="#"><i class="fab fa-google fa-2x"></i></a></li>
+                        <li><a href="#"><i class="fab fa-instagram fa-2x"></i></a></li>
+                        <li><a href="#"><i class="fab fa-facebook-f fa-2x"></i></a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <!-- Off canvas end-->
+
+        <!-- To top button--><a class="scroll-top" href="#top"><i class="fas fa-angle-up"></i></a>
+
+        <!-- Scripts-->
+        <script src="{% static 'assets/js/custom/jquery.min.js' %}"></script>
+        <script src="{% static 'assets/js/custom/popper.min.js' %}"></script>
+        <script src="{% static 'assets/js/bootstrap/bootstrap.min.js' %}"></script>
+        <script src="{% static 'assets/js/custom/plugins.min.js' %}"></script>
+        <script src="{% static 'assets/js/custom/custom.min.js' %}"></script>
+    </body>
+</html>
